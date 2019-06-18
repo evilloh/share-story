@@ -1,0 +1,400 @@
+
+
+body {
+  background: rgba(35,43,51,1);
+  background-image:   linear-gradient(to right, rgba(232,232,232,1) 0%, rgba(230,230,230,1) 15%, rgba(255,255,255,1) 52%, rgba(235,235,235,1) 88%, rgba(230,230,230,1) 100%);
+  overflow-x: hidden;
+}
+
+h1, h3 {
+ color: var(--soft-white)
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.titleContainer h1{
+  font-family: Averia Libre, sans-serif;
+  font-size: 12rem;
+  display: inline-block;
+  padding: 0 2rem;
+  animation: fadeInBig;
+  animation-duration: 1.5s;
+  
+}
+
+@keyframes fadeInBig {
+  from {
+    opacity: 0;
+    transform: scale(1.4)
+  }
+  to {
+    opacity: 1;
+    transform: scale(1)
+  }
+}
+
+h3{
+  margin-top: 2.5rem;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  font-size: 3rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(0);
+  animation: appearKnock 1s .5s forwards;
+}
+
+
+
+.headerContainer{
+  width: 100vw;
+  height: 122vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  background-image: url("/img/darkHallway.jpg") ;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 102vh, 0 100%);
+}
+
+.titleContainer{
+  padding: 1rem 2rem;
+  animation: borderIn;
+  animation-duration: 2.5s;
+  border-bottom: 2px solid var(--light-dark);
+  margin: 0 auto;
+}
+
+@keyframes borderIn{
+  0%{  border-bottom: none}
+  80%{  border-bottom: none}
+  100%{  border-bottom: 2px solid var(--light-dark)}
+}
+
+
+
+
+
+.intermediateDiv{
+  height: 200px;
+  transform: skewY(-7deg);
+  -webkit-transform: skewY(-7deg);
+  padding: 10rem 0;
+
+}
+
+.intermediateDiv img{
+  width: 100%;
+  max-height: 200px;
+}
+
+
+
+
+.sectionContainer{
+  width: 100vw;
+  height: 130vh;
+  margin-top: -10rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  color: var(--soft-white);
+  position: relative;
+  background-image: url("/img/introSectionBG.jpg") ;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  clip-path: polygon(0 20vh, 100% 0, 100% 100%, 0 100%);
+}
+
+.sectionContainer h2{
+  font-family: Averia Libre, sans-serif;
+  font-size: 8.5rem;
+}
+
+.introContainer{
+  width: 70%;
+  padding-bottom: 2.5rem;
+
+}
+
+.sectionContainer p{
+  font-family: Roboto, sans-serif;
+  font-size: 2.6rem;
+  line-height: 1.8;
+  font-weight: 300;
+  width: 70%;
+  padding-top: 2.5rem;
+}
+
+.titleContainer{
+  margin-top: -20rem;
+}
+
+.knockIntro {
+  position: absolute;
+  bottom: 30px;
+  right: 150px;
+  font-family: Averia Libre, sans-serif;
+  text-transform: uppercase;  
+  font-size: 5rem;
+  margin: 5rem;
+  opacity: 0;
+  
+}
+
+.knockIntro:hover {
+  cursor: pointer;
+  transition: color .5s;
+  color:  var(--red);
+
+}
+
+.knockAppear{
+  animation: appearKnock 1s 4s forwards;
+}
+
+
+@keyframes appearKnock{
+  0%{  opacity: 0 }
+  100%{  opacity: 1 }
+}
+
+
+@keyframes fadeInRight {
+   0% {
+      opacity: 0;
+      transform: translateX(20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}
+
+.fadeInRight {
+  animation-duration: 10s;
+  animation-fill-mode: forwards;  
+
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+.introDescription{
+  transform: translateX(-8rem);
+  opacity: 0;
+  transition: all 1s;
+}
+
+.introContainer{
+  transform: translateX(-4rem);
+  opacity: 0;
+  transition: all 2s;
+}
+
+.appear{
+  opacity: 1;
+  transform: translateX(0)
+}
+
+.infoContainer{
+  width: 70%;
+  margin: 0 auto;
+  border-left: 2px solid var(--soft-white);
+  padding-left: 7rem;
+}
+
+/* /////////////////// SECOND PART */
+
+.secondPart, .secondPart2, .secondPart3{
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--black);
+  position: relative;
+}
+
+.secondPartTitle{
+  color: rgba(255, 255, 255, 0);
+  font-size: 5rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: Roboto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.secondPartTitle span {
+  display: block;
+  color:  var(--red);
+  font-size: 10rem;
+  animation: endPresentation ease-in-out 3s 1s forwards;
+}
+
+@keyframes endPresentation{
+  0%{font-size: 10rem}
+  100%{ font-size: 25rem}
+}
+
+.appear2{
+  animation: appearIn 2s forwards;
+}
+
+.appear2d2{
+  animation: appearIn;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+.appear3{
+  animation: appearIn 3s forwards;
+}
+
+.appear3d1{
+  animation: appearIn 3s 1s forwards;
+}
+
+.appear4{
+  animation: appearIn 4s forwards;
+}
+
+.secondPart2{
+  background-color: var(--strong-dark);
+  text-transform: uppercase;
+  transition: opacity 2s;
+}
+
+.firstSent{
+  color: var(--soft-white);
+  position: absolute;
+  top: 75vh;
+  left: 5%;
+  font-family: Averia Libre, sans-serif;
+  font-size: 6rem;
+  opacity: 0;
+}
+.secondSent{
+  color: var(--soft-white);
+  position: absolute;
+  top: 0;
+  left: 55%;
+  font-family: Averia Libre, sans-serif;
+  font-size: 5rem;
+  opacity: 0;
+}
+.thirdSent{
+  color: var(--soft-white);
+  position: absolute;
+  top: 175vh;
+  left: 75%;
+  font-family: Averia Libre, sans-serif;
+  font-size: 6rem;
+  opacity: 0;
+}
+.fourthSent{
+  color: var(--soft-white);
+  position: absolute;
+  bottom: 120vh;
+  left: 25%;
+  font-family: Averia Libre, sans-serif;
+  font-size: 8rem;
+  opacity: 0;
+}
+.fifthSent{
+  color: var(--soft-white);
+  position: absolute;
+  top:  -45vh;
+  left: 5vw;
+  font-family: Averia Libre, sans-serif;
+  font-size: 6rem;
+  opacity: 0;
+}
+
+.sixthSent{
+  color: var(--soft-white);
+  position: absolute;
+  top: -60vh;
+  right: 5vw;
+  font-family: Averia Libre, sans-serif;
+  font-size: 9rem;
+  opacity: 0;
+}
+
+.seventhSent{
+  color: var(--soft-white);
+  position: absolute;
+  top: 120vh;
+  left: 5vw;
+  font-family: Averia Libre, sans-serif;
+  font-size: 10rem;
+  opacity: 0;
+}
+
+.eighthSent{
+  color: var(--soft-white);
+  position: absolute;
+  top: -70vh;
+  left: 5vw;
+  font-family: Averia Libre, sans-serif;
+  font-size: 10rem;
+  opacity: 0;
+
+}
+
+.secondPart3{
+  
+}
+
+.secondP{
+color: var(--soft-white);
+font-size: 5rem;
+font-family: Averia Libre, sans-serif;
+width: 70%;
+text-align: center;
+margin: 0 auto;
+padding: 28vh 0 12vh 0;
+text-transform: uppercase;
+
+}
+
+.secondKnock{
+  color: var(--red);
+  font-size: 8rem;
+  text-align: center;
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-family: Roboto, sans-serif;
+  border-bottom: 1px solid white;
+  padding-bottom: 1rem;
+  display: block;
+  width: 30vw;
+  opacity: 0;
+}
+
+.secondKnock:hover:after{
+  content: 'KNOCK KNOCK';
+  font-family: Averia Libre, sans-serif;
+  cursor: pointer;
+  transition: color .35s;
+}
+
+.secondKnock::after{
+  content: 'Go to sleep';
+  cursor: pointer;
+  color: var(--soft-white)
+}
+
+.secondKnock:hover::after {
+  content: 'Knock Knock';
+  font-family: Averia Libre, sans-serif;
+  color: var(--red)
+}

@@ -1,0 +1,47 @@
+.blackDiv3{
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--black)
+  
+}
+
+.blackDiv3 p{
+  font-size: 3.7rem;
+  color: var(--soft-white);
+  text-align: center; 
+  padding-top: 7rem;
+}
+
+.quoteContainer{
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 20vh;
+}
+
+.blackDiv3 p::first-letter {
+  font-size: 5rem;
+}
+
+cite {
+ color: var(--soft-white);
+ font-size: 3rem;
+ padding: 4rem 4rem 0 0;
+ display: block;
+ text-align: right;
+ 
+}
+
+.sleepBtn {
+  color: var(--light-dark);
+  text-align: center;
+  font-size: 5rem;
+}
+
+.sleepBtn:hover {
+  color: var(--medium-dark);
+  cursor: pointer;
+  font-size: 5.5rem;
+  transition: all .1s;
+}
+
+

@@ -1,0 +1,52 @@
+:root {
+ --soft-white: #dddddd;
+ --strong-white: #f2f2f2;
+ --strongest-dark: #1d1e1f;
+ --black: 	#121213;
+ --strong-dark: 	#282b2e;
+ --dark: 	#35393d;
+ --medium-dark: 	#3e4954;
+ --light-dark: 	#455566;
+ --red: red;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+
+	
+html{
+  box-sizing: border-box;
+  font-size: 62.5%
+}
+
+.blackIn{
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: block;
+  animation: blackIn .7s forwards;
+}
+
+@keyframes blackIn {
+  0%   {opacity: 100}
+  100% {opacity: 0}
+}
+
+@keyframes appearIn {
+  0%   {opacity: 0}
+  100% {opacity: 100}
+}

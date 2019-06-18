@@ -1,0 +1,85 @@
+
+figure {
+  width: 400px; 
+  height: 400px;
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, +50%) scale(1);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  background-color: black; /* fallback color */
+  background-image: url("/img/ilLadro2.png");
+  background-position: center;
+  background-size: cover;
+  transition: all .3s;
+}
+
+
+.img::before {
+  content: "";
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(52, 73, 94, 0.75);
+}
+
+
+#casita {
+  z-index: 1;
+  position: fixed;
+  width: 100vw; 
+  height: 100vw;
+  display: none;
+}
+
+canvas{
+  z-index: 100;
+}
+
+.glitch{
+	animation: glitch;
+	animation-duration: .3s;
+
+}
+
+.glitchFinal{
+    z-index: 1;
+  position: fixed;
+  width: 100vw; 
+  height: 100vw;
+  animation: glitchFinale .5s infinite;
+  background-color: black;
+}
+
+
+
+@keyframes glitch{
+	00% {content:url("/img/ilLadroGlitch1.png")}
+	40% {content:url("/img/ilLadroGlitch2.png")}
+	60% {content:url("/img/ilLadroGlitch3.png")}
+	100% {content:url("/img/ilLadroGlitch4.png")}
+}
+
+@keyframes glitchFinale{
+	0% {content:url("/img/ilLadroGL4.png")}
+	20% {content:url("/img/ilLadroGL1.png")}
+	40% {content:url("/img/ilLadroGL2.png")}
+	100% {content:url("/img/ilLadroGL3.png")}
+}
+
+@keyframes displayed{
+	0% {display: none !important}
+	1% {display: block !important}
+	100% {display: block !important}
+}
+
+.loopContainer{
+  background-color: black;
+}

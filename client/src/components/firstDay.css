@@ -1,0 +1,137 @@
+.mobileContainer{
+
+  width: 300px;
+  position: fixed;
+  bottom: -450px;
+  transform: rotate(270deg);
+  right: 40%;
+  z-index: 50;
+}
+
+
+/* .mobileContainer{
+POSIZIONE FINALE
+  width: 300px;
+  position: fixed;
+  top: 20%;
+  right: 20%;
+  z-index: 50;
+} */
+
+.animatedMobile {
+  animation: mobileEnter;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;  
+}
+
+@keyframes mobileEnter{
+  from {
+    transform: rotate(-90deg);;
+    bottom: -450px;
+    right: 40%;
+  }
+  to {
+    transform: rotate(0deg);;
+    bottom: 20%;
+    right: 20%;
+  }
+}
+
+
+.mobileContainer img {
+  width: 100%;
+}
+
+.mobileText {
+  color: white;
+  position: absolute;
+  top: 15%;
+  left: 0;
+  padding: 0 15%;
+  width: 100%;
+  max-height: 80%;
+}
+
+.mobileText h3{
+  text-align: center;
+  font-size: 5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.mobileText h1{
+  margin-bottom: 1rem;
+}
+
+.mobileText h2{
+  text-align: center;
+  border-bottom: 1px solid white;
+  padding-bottom: .5rem;
+  margin-bottom: 1rem;
+}
+
+.mobileText img{
+  margin: 2rem 0;
+}
+
+.mobileText a{
+  color: rgb(190, 35, 35)
+}
+
+.endFirstDayBG{
+  background-color: var(--black);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: none;
+  opacity: 0;
+}
+
+.befSecondPartTitle {
+  color: var(--soft-white);
+  font-size: 5rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: Roboto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.befSecondPartTitle span {
+  display: block;
+  color:  var(--red);
+  font-size: 10rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.endFirstDayContainer{
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20vh 0 0 0;
+}
+
+.endFirstDayContainer h4{
+  color: var(--soft-white);
+  font-size: 5rem;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 1.4;
+  padding-top: 4rem;
+  animation: appearIn 1s forwards;
+}
+
+.endFirstDayContainer span{
+  color: var(--red);
+  text-transform: uppercase;
+}
+
+.endFirstDayContainer span:hover{
+  cursor: pointer;
+}

@@ -1,0 +1,231 @@
+body {
+  overflow-x: hidden;
+
+}
+
+.appearFromWhite{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 300;
+  animation: appearfromwhite;
+  animation-duration: 1s;
+  opacity: 0;
+}
+
+@keyframes appearfromwhite {
+  0% { opacity: 1; display: block }
+  100% { opacity: 0; display: none }
+}
+
+.superContainer{
+  width: 100vw;
+  height: 3000px;
+  
+}
+
+.mirrorContainer{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-image:  url("/img/mirrorbase.jpg") no-repeat center center fixed;
+}
+
+.mirrorImg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+	
+  /* Preserve aspet ratio */
+  max-width: 100%;
+}
+
+.mirrorImg1 {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+	opacity: 0;
+  /* Preserve aspet ratio */
+  max-width: 100%;
+}
+
+
+/* TRYING OUT THINGSSSS       //////////////////////////////////////////////////////////////////                  */
+
+
+body, div, p{
+	margin: 0;
+	padding: 0;
+	font-family: Helvetica, sans-serif;
+}
+			
+#before-after{
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+}
+		
+.view{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+		
+  .view-before{
+	  z-index: 100;
+  }
+		
+  .view-after{
+		z-index: 200;
+	}
+	
+	/* #dragme{
+		position: absolute;
+		width: 15px;
+		height: 30%;
+		top: 0px;
+		left: 0px;
+		background-color: black;
+		cursor: pointer;
+		z-index: 300;
+	}
+	 */
+	/*
+		Controls
+	*/
+	
+  
+  img {
+    width: 100vw;
+  }
+
+  .blackDiv2{
+   width: 100vw;
+   height: 100vh;
+   background-color: black;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 200;
+   opacity: 0;
+   transition: 3s;
+  }
+
+  .blackDiv2 h1{
+    color: white;
+    text-align: center;
+    position: fixed;
+    text-transform: uppercase;
+    font-size: 4rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transition: opacity 6s
+  }
+
+  .appear{
+    z-index: 500;
+    opacity: 1;
+  }
+
+  .appearH1{
+    animation: appearh1;
+    animation-duration: 5s;
+  }
+
+  #casa:hover::after {
+    content: 'Go for a walk';
+    cursor: pointer;
+    color: rgb(33, 202, 33);
+}
+
+  #casa::after {
+    content: 'Kill Yourself';
+    color: rgb(202, 33, 33);
+
+}
+
+
+ @keyframes heartFadeInOut {
+  0% {transform: translate(-50%, -50%) scale(1);}
+  25% {transform: translate(-50%, -50%) scale(.97);}
+  35% {transform: translate(-50%, -50%) scale(.9);}
+  45% {transform: translate(-50%, -50%) scale(1.1);}
+  55% {transform: translate(-50%, -50%) scale(.9);}
+  65% {transform: translate(-50%, -50%) scale(1.1);}
+  75% {transform: translate(-50%, -50%) scale(1.03);}
+  100% {transform: translate(-50%, -50%) scale(1);}
+}
+
+#casa  { 
+  animation-name: heartFadeInOut; 
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+
+
+
+  @keyframes appearh1 {
+    0%   {opacity: 0;}
+    50%   {opacity: 0;}
+    100% {opacity: 1}
+  }
+
+  #newDaySvg{
+    transform: rotate(90deg) translate(0px,0px);
+    position: absolute;
+    z-index: 500;
+    margin-top: 20px;
+    margin-left: 20px;
+    transition: filter .4s;
+  }
+
+  #newDaySvg:hover{
+    filter: invert(0.4) sepia(1) saturate(4) hue-rotate(36deg) brightness(1.06);
+    cursor: grab !important
+  }
+
+  #newDaySvg:active{
+    transition: width .3s, margin .3s;
+    width: 55px;
+    margin-top: 30px;
+    cursor: grabbing !important
+  }
+
+.toTheLeft{
+  transition: all 1s;
+  width: 100% !important
+}
+
+  #arrowSvg {
+    animation: arrowAnimation;
+    animation-duration: .9s;
+    animation-iteration-count: infinite;
+    transform: scaleY(1) translate(0px,-30px)
+  }
+
+  @keyframes arrowAnimation {
+    
+    0%   {transform: scaleY(1) translate(0px,20px)}
+    50%  {transform: scaleY(.95) translate(0px, 0px)}
+    100% {transform: scaleY(1) translate(0px,20px)}
+  }
+
+
+  .firstMirrorLink{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    font-size: 6rem;
+    color: var(--strong-dark);
+    z-index: 400;
+
+  }
