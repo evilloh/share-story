@@ -33,14 +33,18 @@ router.get('/lastOne', (req, res) => {
 
       })
 
-      console.log(trues, falses)
+      // console.log(trues, falses)
       const result = {
         post: data[data.length - 1],
         ratio: trues / falses
       }
-      return res.json(result)
+      console.log("data", data)
+      console.log("data.post", data.post)
+      return res.json(data)
     })
-    .catch(err => console.log('Error:', err))
+
+
+    .catch(err => console.log('Error in GETTING lastOne:', err))
 })
 
 
