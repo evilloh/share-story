@@ -29,7 +29,7 @@ class Finale extends Component {
 
   componentDidMount() {
     document.querySelector(".end6").addEventListener("click", () => {
-      axios.get("/api/lastOne", { withCredentials: true })
+      axios.get("https://share-story.herokuapp.com/api/lastOne", { withCredentials: true })
         .then(theChoice => {
           console.log("ITS NEWWWW!", theChoice)
           this.setState({ help: theChoice.data.post.help, description: theChoice.data.post.description, ratio: theChoice.data.ratio })
