@@ -12,7 +12,7 @@ const cors = require('cors');
 
 
 mongoose
-  .connect('mongodb://localhost/server', { useNewUrlParser: true })
+  .connect(`${process.env.MONGO_URL}`, { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -41,7 +41,7 @@ app.use(require('node-sass-middleware')({
 
 
 // configuracion middleware CORS
-const whitelist = ['http://localhost:3000']
+const whitelist = ['http://localhost:5000']
 const corsOptions = {
   origin: (origin, cb) => {
     const originIsWhitelisted = whitelist.includes(origin);
