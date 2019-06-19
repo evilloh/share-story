@@ -39,7 +39,7 @@ class Choice extends Component {
   handleFormSubmit = e => {
     e.preventDefault()
     let posterino = { help: true, description: this.state.choice.description }
-    axios.post(`​https://share-story.herokuapp.com/newPost`, posterino, { withCredentials: true })
+    axios.post("​https://share-story.herokuapp.com/api/newPost", posterino, { withCredentials: true })
       .then(theChoice => console.log("ITS NEWWWW!", theChoice))
       .catch(err => console.log("You couldn't make a choice!", err))
     this.setState({ help: undefined, description: "" })
@@ -53,7 +53,7 @@ class Choice extends Component {
 
   handleNo = () => {
     let posterino = { help: false, description: "" }
-    axios.post(`​https://share-story.herokuapp.com/newPost`, posterino, { withCredentials: true }
+    axios.post("​https://share-story.herokuapp.com/api/newPost", posterino, { withCredentials: true }
     )
       .then(theChoice => console.log("ITS NEWWWW!", theChoice))
       .catch(err => console.log("You couldn't make a choice!", err))
