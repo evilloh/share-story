@@ -32,7 +32,7 @@ class Loop extends Component {
     const truizzami = () => {
       console.log(this.props)
       this.props.props.levelizer()
-      this.props.trueizer(50)
+      // this.props.trueizer(50)
     }
 
 
@@ -170,7 +170,7 @@ class Loop extends Component {
         setTimeout(changePhone, 5500);
       }
 
-      if (scrollerino * -1 > canvas.width * 4.65) {
+      if (scrollerino * -1 > canvas.width * 0.65) {
 
         document.querySelector(".endFirstDayBG").style.display = "block"
         document.querySelector(".endFirstDayBG").style.opacity = "1"

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../mirror.css';
 import anim from "./animation"
-import Vivus from "vivus";
 // import ReactVivus from 'react-vivus';
 
 class Mirror1_2 extends Component {

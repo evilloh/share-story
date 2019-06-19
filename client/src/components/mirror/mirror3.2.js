@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../mirror.css';
 import anim from "./animation"
-import Vivus from "vivus";
 // import ReactVivus from 'react-vivus';
 
 class Mirror3_2 extends Component {
@@ -19,7 +18,7 @@ class Mirror3_2 extends Component {
   goToNext = () => {
     window.onmousemove = undefined
     setTimeout(() => {
-      this.props.trueizer(16)
+      this.props.trueizer(27)
     }, 2000);
     document.querySelector(".blackDiv2").classList.add("appear")
   }

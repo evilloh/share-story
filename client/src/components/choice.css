@@ -16,6 +16,18 @@
   width: 70%;
   margin: 0 auto;
   padding-top: 20vh;
+  animation: fadeInLeft 2s;
+}
+
+.quoteContainer p:first-child{
+  opacity: 0;
+  animation: fadeInLeft 2s 1s forwards;
+}
+
+.quoteContainer p:nth-child(2){
+  opacity: 0;
+  animation: fadeInRight 2s 2s forwards;
+
 }
 
 .blackDiv3 p::first-letter {
@@ -28,13 +40,16 @@ cite {
  padding: 4rem 4rem 0 0;
  display: block;
  text-align: right;
- 
+ opacity: 0;
+ animation: fadeInBottom 2s 3s forwards;
 }
 
 .sleepBtn {
   color: var(--light-dark);
   text-align: center;
   font-size: 5rem;
+  opacity: 0;
+  animation: fadeInTop 2s 4s forwards;
 }
 
 .sleepBtn:hover {
@@ -45,3 +60,190 @@ cite {
 }
 
 
+.formContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--strong-dark);
+  animation: appearIn 5s;
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.superContainerChoice{
+  background-color: var(--black);
+}
+
+.bg-video {
+  opacity: .45;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.bg-video-content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.formContainer form {
+  position: absolute;
+  z-index: 20;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  opacity: 0;
+  animation: appearIn 1s 1s forwards;
+}
+
+form p{
+  font-family: Averia Libre, sans-serif;
+  color: var(--strong-white);
+  text-align: center;
+  font-size: 4rem;
+  padding-top: 4rem;
+  margin-bottom: 3rem;
+}
+
+form input{
+margin: 1rem 0;
+}
+
+.inputText{
+  height: 4rem;
+  padding: 0 2rem;
+}
+
+.sub{
+  background-color: none;
+  border: none;
+  font-size: 4rem;
+  font-family: Roboto, sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  width: 40%;
+  margin: 1rem auto;
+  border-radius: 3px;
+  padding: 1rem 0;
+}
+
+.sub:hover{
+  transition: all .1s;
+  font-size: 4.4rem;
+  padding: 0.8rem 0 ;
+}
+
+.sub:active{
+  transform: scale(.9)
+}
+
+.dreamDescription{
+  opacity: 0;
+  position: absolute;
+  z-index: 20;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 90px;
+  font-size: 4rem;
+  background: rgb(1,1,18);
+  background: radial-gradient(circle, rgba(1,1,18,0.4) 0%, rgba(55,55,61,0) 47%, rgba(255,255,255,0) 100%);
+  animation: appearIn 2s 5s forwards;
+}
+
+.dreamDescription p {
+  font-family: Averia Libre, sans-serif;
+  color: var(--strong-white);
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.choices, .choice1, .choice2{
+  opacity: 0;
+  animation: appearIn 2s 5s forwards;
+  
+}
+
+.choices{
+  position: absolute;
+  bottom: 16%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  z-index: 30;
+  transition: opacity .6s;
+}
+
+.disappearBot{
+  animation: blackIn 1s forwards;
+  transition: transform 2s;
+  transform: translate(-50%, 60vh) !important;  
+}
+
+.disappearTop{
+  animation: blackIn 1s forwards;
+  transition: transform 4s;
+  transform: translate(-50%, -160vh) !important;
+}
+
+.choice1, .choice2{
+  
+  font-size: 3rem;
+  width: 35rem;
+  font-family: Averia Libre, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  border-radius: 1rem;
+  background-color: rgba(244, 244, 244, .4);
+  margin: 0rem 1.2rem 0rem 1.2rem;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+}
+
+
+
+
+.choice1:hover, .choice2:hover{
+  transition: all .4s;
+  background-color: rgba(244, 244, 244, .8);
+
+}
+
+.choice1:active, .choice2:active{
+  transition: all .1s;
+  transform: scale(.9)
+}
+
+
+
+
+.transitionDiv{
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--black);
+  z-index: 9999;
+  position: absolute;
+  top:0;
+  left: 0;
+  display: none;
+  opacity: 0;
+  animation: appearIn 1s;
+}

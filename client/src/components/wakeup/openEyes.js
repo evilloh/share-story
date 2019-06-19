@@ -36,13 +36,13 @@ class openEyes extends Component {
         setTimeout(() => {
           this.props.trueizer(5)
         }, 2000);
-      } else if (this.props.wakes[14]) {
+      } else if (this.props.wakes[15]) {
         setTimeout(() => {
-          this.props.trueizer(14)
+          this.props.trueizer(15)
         }, 2000);
-      } else if (this.props.wakes[26]) {
+      } else if (this.props.wakes[25]) {
         setTimeout(() => {
-          this.props.trueizer(26)
+          this.props.trueizer(25)
         }, 2000);
       }
 

@@ -49,7 +49,7 @@ class WakeUp1 extends Component {
           document.querySelector(".text1WakeUp").classList.add("closeText");
 
           setTimeout(() => {
-            this.props.trueizer(10)
+            this.props.trueizer(11)
           }, 2000);
         }, 1000);
       }

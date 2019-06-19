@@ -30,7 +30,7 @@ class Door3 extends Component {
     }, 1000);
 
     setTimeout(() => {
-      this.props.trueizer(21)
+      this.props.trueizer(20)
     }, 9000);
   }
 

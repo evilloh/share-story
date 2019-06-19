@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../loop.css';
 
-class Loop extends Component {
+class Loop1 extends Component {
 
 
   constructor(props) {
@@ -14,11 +14,14 @@ class Loop extends Component {
 
 
   componentDidMount() {
-
     document.querySelector("#areaClick").onclick = (e) => {
       e.preventDefault()
-      this.props.trueizer(20)
-    };
+      document.querySelector(".transitionDivWhite").style.display = "block"
+      setTimeout(() => {
+        this.props.trueizer(31)
+      }, 1000);
+    }
+
 
     window.onbeforeunload = () => window.scrollTo(0, 0);
     // setInterval(() => {
@@ -40,6 +43,7 @@ class Loop extends Component {
     let y2 = window.innerHeight / 3
     return (
       <React.Fragment>
+        <div className="transitionDivWhite"></div>
         <div className="disturb">
           <img className="glitchFinal" src="img/ilLadroGL4.png" alt="glitch effect" useMap="#mapperino"></img>
         </div>
@@ -57,4 +61,4 @@ class Loop extends Component {
 
 }
 
-export default Loop;
+export default Loop1;

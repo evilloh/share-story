@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Begin from './components/Begin'
 import Home from './components/Home'
 import { Switch, Route } from 'react-router-dom'
-import Mirror1_2 from "./components/mirror/mirror1.2"
 
 class App extends Component {
 
@@ -15,8 +14,8 @@ class App extends Component {
 
     this.levelizer = (level) => {
       console.log("did you call me?")
-      let newLevels 
-      newLevels = 1
+      let newLevels
+      newLevels = this.state.level + 1
       this.setState({ level: newLevels })
     }
   }
@@ -27,7 +26,6 @@ class App extends Component {
       <Switch>
         <Route path="/" exact render={() => <Home level={this.state.level} levelizer={this.levelizer} />} />
         <Route path="/begin" exact render={() => <Begin level={this.state.level} levelizer={this.levelizer} />} />
-        <Route path="/mirror1" component={Mirror1_2} />
       </Switch>
 
     )

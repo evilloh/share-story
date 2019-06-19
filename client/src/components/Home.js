@@ -71,7 +71,7 @@ class Home extends Component {
       }
 
       // if (1 > 0) {
-      if (this.props.level === 1) {
+      if (this.props.level > 0) {
 
         // SECOND SECTION PART
 
@@ -152,7 +152,7 @@ class Home extends Component {
 
         </section>
 
-        {this.props.level === 1 && <>
+        {this.props.level > 0 && <div>
           <section className="secondPart" id="exactline">
             <h2 className="secondPartTitle">It just gives me more reasons to <span>end</span> this insufferable pain.</h2>
           </section>
@@ -168,9 +168,18 @@ class Home extends Component {
           </section>
           <section className="secondPart3">
             <p className="secondP reveal2">You feel the unstoppable pressure that grows day after day, feasting on your unhappyness and rewarding you with anxiety.</p>
-            <Link to="/begin"> <h4 className="secondKnock"></h4></Link>
+            <Link to="/begin"> <h4 className="secondKnock"> </h4></Link>
           </section>
-        </>
+        </div>
+        }
+
+        {this.props.level > 1 &&
+          <div>
+            <section className="secondPart" id="exactline2">
+              <h2 className="secondPartTitle">PUTTANA LA MADONNA CAGNA SCHIFOSA DIO CANE</h2>
+              <Link to="/begin"> <h4 className="secondKnock"></h4></Link>
+            </section>
+          </div>
         }
 
 

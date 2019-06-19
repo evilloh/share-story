@@ -1,21 +1,28 @@
 import React, { Component } from 'react';
 import './choice.css';
 import axios from 'axios'
+import { HashLink as Link } from 'react-router-hash-link';
 
 
-class Door2 extends Component {
+class Choice extends Component {
 
 
   constructor(props) {
     super(props)
     this.state = {
       show: undefined,
+      chosen: undefined,
       choice: {
-        help: '',
+        help: undefined,
         description: '',
       },
     }
     this.showForm = () => this.setState({ show: 1 })
+    this.typeText = () => {
+      document.querySelector('.dreamDescription').classList.add("disappearTop")
+      document.querySelector('.choices').classList.add("disappearBot")
+      this.setState({ chosen: 1 })
+    }
 
   }
 
@@ -31,41 +38,66 @@ class Door2 extends Component {
 
   handleFormSubmit = e => {
     e.preventDefault()
-    let { help, description } = this.state
-    axios.post(`https://ih-beer-api.herokuapp.com/beers/new`, { help, description })
+    let posterino = { help: true, description: this.state.choice.description }
+    axios.post(`http://localhost:5000/newPost`, posterino)
       .then(theChoice => console.log("ITS NEWWWW!", theChoice))
       .catch(err => console.log("You couldn't make a choice!", err))
-    this.setState({ name: '', tagline: '', description: '', first_brewed: '', brewers_tips: '', attenuation_level: '', contributed_by: '' })
+    this.setState({ help: undefined, description: "" })
+    document.querySelector(".transitionDiv").style.display = "block"
+    setTimeout(() => {
+      this.props.props.levelizer()
+      this.props.trueizer(18)
+    }, 1000);
+
   }
 
+  handleNo = () => {
+    let posterino = { help: false, description: "" }
+    axios.post(`http://localhost:5000/newPost`, posterino)
+      .then(theChoice => console.log("ITS NEWWWW!", theChoice))
+      .catch(err => console.log("You couldn't make a choice!", err))
+    this.setState({ help: undefined, description: "" })
+    document.querySelector(".transitionDiv").style.display = "block"
+    setTimeout(() => {
+      this.props.props.levelizer()
+      this.props.trueizer(18)
+    }, 1000);
 
-  postCoaster = coaster => {
-    return this.service.post('newCoaster', coaster)
-      .then(res => res.data)
-      .catch(err => console.log(err))
   }
 
   componentDidMount() {
-
+    console.log(this.props)
   }
 
   render() {
 
     return (
       <div className="superContainerChoice">
-        {this.state.show &&
-          <div >
-            <form onSubmit={this.handleFormSubmit}>
-              <label>Name:
-                <input type="text" name="name" value={this.state.name} onChange={(e) => this.handleChange(e)} />
-              </label>
-              <br></br>
+        <div className="transitionDiv">        </div>
 
-              <label>tagline:
-                <input type="text" name="tagline" value={this.state.tagline} onChange={(e) => this.handleChange(e)} />
-              </label>
-              <input className="sub" type="submit" value="Send" />
-            </form>
+        {this.state.show &&
+          <div className="formContainer">
+            <div className="bg-video">
+              <video className="bg-video-content" src="/videos/windowvideo.mp4" autoPlay muted loop>
+              </video>
+            </div>
+            <div className="dreamDescription">
+              <p>Weird dream you are having tonight.</p>
+              <p>You stand behind a person, who appears to be moments away from jumping off the window right in front of you.</p>
+              <p>What do you do?</p>
+            </div>
+            <div className="choices">
+              <p className="choice1" onClick={this.typeText}>Say something</p>
+              <Link to="/#exactline2" ><p className="choice2" onClick={this.handleNo}>Stay quiet</p></Link>
+            </div>
+            {this.state.chosen === 1 &&
+              <form onSubmit={this.handleFormSubmit}>
+                <p>The person notices you, looks you in the eyes and asks:</p>
+                <p>Why not?</p>
+                <input className="inputText" type="text" name="description" value={this.state.description} onChange={(e) => this.handleChange(e)} />
+                <input className="sub" type="submit" value="Speak" />
+              </form>
+            }
           </div>
         }
 
@@ -79,10 +111,11 @@ class Door2 extends Component {
           </div>
         </div>
 
+
       </div>
     )
   }
 
 }
 
-export default Door2;
+export default Choice;

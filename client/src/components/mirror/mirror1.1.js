@@ -37,13 +37,13 @@ class Mirror1 extends Component {
           setTimeout(() => {
             this.props.trueizer(6)
           }, 2000);
-        } else if (this.props.wakes[15]) {
+        } else if (this.props.wakes[16]) {
           setTimeout(() => {
-            this.props.trueizer(15)
+            this.props.trueizer(16)
           }, 2000);
-        } else if (this.props.wakes[27]) {
+        } else if (this.props.wakes[26]) {
           setTimeout(() => {
-            this.props.trueizer(27)
+            this.props.trueizer(26)
           }, 2000);
         }
 

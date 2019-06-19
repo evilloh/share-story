@@ -48,7 +48,7 @@ class WakeUp4 extends Component {
             // THIS ALWAYS WHEN THE NEXT COMPONENT TO BE MOUNTED DOESNT HAVE A ONSCROLL 
             window.onscroll = undefined
 
-            this.props.trueizer(25)
+            this.props.trueizer(24)
           }, 2000);
 
         }, 1000);

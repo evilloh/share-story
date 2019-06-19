@@ -44,7 +44,7 @@ class WakeUp2 extends Component {
           document.querySelector(".text1WakeUp").classList.add("closeText");
 
           setTimeout(() => {
-            this.props.trueizer(11)
+            this.props.trueizer(12)
           }, 2000);
 
 

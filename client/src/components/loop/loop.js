@@ -17,19 +17,19 @@ class Loop extends Component {
 
     const truizzami = () => {
       console.log(this.props)
-      if (this.props.wakes[17]) {
-        this.props.trueizer(17)
-      } else if (this.props.wakes[18]) {
-        this.props.trueizer(18)
+      if (this.props.wakes[28]) {
+        this.props.trueizer(28)
+      } else if (this.props.wakes[29]) {
+        this.props.trueizer(29)
 
-      } else if (this.props.wakes[19]) {
+      } else if (this.props.wakes[30]) {
         console.log(this.props.wakes)
 
         for (let i = 0; i < 100; i++) {
           window.clearInterval(i);
         }
         setInterval(() => {
-          this.props.trueizer(19)
+          this.props.trueizer(30)
         }, 200);
 
       }

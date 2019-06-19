@@ -1,0 +1,136 @@
+.finaleContainer {
+  background-color: var(--strong-white);
+  width: 100vw;
+  height: 100vh;
+  transition: all 1.5s;
+}
+
+.ending {
+  font-family: Roboto, sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.ending:hover {
+  font-family: Averia Libre, sans-serif;
+}
+
+.end1{
+  display: block;
+  font-size: 13rem;
+  width: 100%;
+  text-align: center;
+}
+
+.end2{
+  font-size: 7rem;
+  width: 100%;
+  text-align: center;
+  animation: appearIn 1s;
+}
+
+.end3{
+  font-size: 5.5rem;
+  width: 100%;
+  text-align: center;
+  animation: appearIn 1s;
+}
+
+.end4{
+  font-size: 4rem;
+  width: 100%;
+  text-align: center;
+  animation: appearIn 1s;
+}
+
+.end5{
+  font-size: 2.2rem;
+  width: 100%;
+  text-align: center;
+  animation: appearIn 1s;
+}
+
+.end6{
+  font-size: 1.4rem;
+  width: 100%;
+  text-align: center;
+  animation: appearIn 1s;
+  color: var(--soft-white)
+}
+
+.end7{
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  animation: appearIn 2s 2s forwards;
+  color: var(--strong-white)
+
+}
+
+.end7 p{
+  font-size: 4rem;
+  text-align: center;
+}
+
+.firstWonCont, .secondWonCont{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--strong-white)
+}
+
+.firstWonCont p:nth-child(1) {
+  color: red;
+  text-transform: uppercase;
+  padding-bottom: 6rem;
+}
+
+.firstWonCont h2{
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  font-size: 5rem;
+  font-style: italic;
+  text-align: center;
+  padding-bottom: 6rem;
+}
+
+.secondWonCont p:nth-child(3) {
+  padding-bottom: 6rem;
+  font-size: 3rem;
+}
+
+.secondWonCont{
+  display: none;
+  opacity: 0;
+  animation: appearIn 1.3s .5s forwards;
+
+}
+
+.next{
+  font-family: Averia Libre, sans-serif;
+  border-radius: 1rem;
+  background-color: var(--soft-white);
+  color: var(--strong-dark);
+  position: absolute;
+  bottom: 4rem;
+  right: 15rem;
+  cursor: pointer;
+  padding: 1rem 4rem;
+}
+
+.next:hover{
+  transition: all .05s;
+  transform: scale(1.1)
+}

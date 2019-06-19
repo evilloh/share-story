@@ -26,7 +26,7 @@ class Door2 extends Component {
     }, 1000);
 
     setTimeout(() => {
-      this.props.trueizer(9)
+      this.props.trueizer(10)
     }, 9000);
 
   }

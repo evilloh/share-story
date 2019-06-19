@@ -8,6 +8,7 @@ const hbs = require('hbs');
 const mongoose = require('mongoose');
 const logger = require('morgan');
 const path = require('path');
+const cors = require('cors');
 
 
 mongoose
@@ -38,6 +39,16 @@ app.use(require('node-sass-middleware')({
   sourceMap: true
 }));
 
+
+// configuracion middleware CORS
+const whitelist = ['http://localhost:3000']
+const corsOptions = {
+  origin: (origin, cb) => {
+    const originIsWhitelisted = whitelist.includes(origin);
+    cb(null, originIsWhitelisted)
+  }
+}
+app.use(cors(corsOptions))
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
