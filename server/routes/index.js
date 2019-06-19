@@ -28,7 +28,8 @@ router.get('/lastOne', (req, res) => {
       let trues = 0
       let falses = 0
       let value = data.forEach((el) => {
-
+        console.log("pota proviamo", el.help)
+        console.log("e se non funziona vediamo", el)
         el.help ? trues++ : falses++
 
       })
