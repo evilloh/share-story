@@ -3,9 +3,7 @@ const router = express.Router();
 const Post = require('../models/post.model')
 
 /* GET home page */
-router.get('/', (req, res, next) => {
-  res.render('index');
-});
+
 
 router.post('/newPost', (req, res) => {
   Post.create(req.body)
@@ -24,7 +22,7 @@ router.post('/newPost', (req, res) => {
 router.get('/lastOne', (req, res) => {
   Post.find()
     .then(data => {
-
+      console.log("Diocane")
       let trues = 0
       let falses = 0
       let value = data.forEach((el) => {
@@ -43,8 +41,6 @@ router.get('/lastOne', (req, res) => {
       console.log("data.post", data.post)
       return res.json(data)
     })
-
-
     .catch(err => console.log('Error in GETTING lastOne:', err))
 })
 

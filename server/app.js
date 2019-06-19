@@ -41,7 +41,7 @@ app.use(require('node-sass-middleware')({
 
 
 // configuracion middleware CORS
-const whitelist = ['http://localhost:5000']
+const whitelist = ['https://share-story.herokuapp.com/']
 const corsOptions = {
   origin: (origin, cb) => {
     const originIsWhitelisted = whitelist.includes(origin);
@@ -63,7 +63,7 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 
 const index = require('./routes/index');
-app.use('/', index);
+app.use('/api', index);
 
 app.use((req, res) => { res.sendFile(__dirname + "/public/index.html"); })
 

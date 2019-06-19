@@ -29,10 +29,10 @@ class Finale extends Component {
 
   componentDidMount() {
     document.querySelector(".end6").addEventListener("click", () => {
-      axios.get(`https://share-story.herokuapp.com/lastOne`)
+      axios.get(`https://share-story.herokuapp.com/api/lastOne`)
         .then(theChoice => {
-          this.setState({ help: theChoice.data.post.help, description: theChoice.data.post.description, ratio: theChoice.data.ratio })
           console.log("ITS NEWWWW!", theChoice)
+          this.setState({ help: theChoice.data.post.help, description: theChoice.data.post.description, ratio: theChoice.data.ratio })
         })
         .catch(err => console.log("You couldn't make a choice!", err))
 
