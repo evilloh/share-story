@@ -22,14 +22,10 @@ router.post('/newPost', (req, res) => {
 router.get('/lastOne', (req, res) => {
   Post.find()
     .then(data => {
-      console.log("Diocane")
       let trues = 0
       let falses = 0
       let value = data.forEach((el) => {
-        console.log("pota proviamo", el.help)
-        console.log("e se non funziona vediamo", el)
         el.help ? trues++ : falses++
-
       })
 
       // console.log(trues, falses)
@@ -39,7 +35,7 @@ router.get('/lastOne', (req, res) => {
       }
       console.log("data", data)
       console.log("data.post", data.post)
-      return res.json(data)
+      return res.json(result)
     })
     .catch(err => console.log('Error in GETTING lastOne:', err))
 })
