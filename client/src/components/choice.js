@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './choice.css';
 import axios from 'axios'
 import { HashLink as Link } from 'react-router-hash-link';
+import PostServices from '../services/postServices'
 
 
 class Choice extends Component {
@@ -17,6 +18,7 @@ class Choice extends Component {
         description: '',
       },
     }
+    this.services = new PostServices()
     this.showForm = () => this.setState({ show: 1 })
     this.typeText = () => {
       document.querySelector('.dreamDescription').classList.add("disappearTop")
@@ -41,31 +43,37 @@ class Choice extends Component {
 
     e.preventDefault()
     let posterino = { help: true, description: this.state.choice.description }
-    axios.post("​https://share-story.herokuapp.com/api/newPost", posterino, { withCredentials: true })
-      .then(theChoice => console.log("ITS NEWWWW!", theChoice))
+
+    this.services.postAnswer(posterino)
+      .then(theChoice => {
+        console.log(theChoice)
+        this.setState({ help: undefined, description: "" })
+        document.querySelector(".transitionDiv").style.display = "block"
+        setTimeout(() => {
+          this.props.props.levelizer()
+          this.props.trueizer(18)
+        }, 1000);
+      })
       .catch(err => console.log("You couldn't make a choice!", err))
-    this.setState({ help: undefined, description: "" })
-    document.querySelector(".transitionDiv").style.display = "block"
-    setTimeout(() => {
-      this.props.props.levelizer()
-      this.props.trueizer(18)
-    }, 1000);
+
 
   }
 
   handleNo = () => {
     console.log("diocane")
     let posterino = { help: false, description: "" }
-    axios.post("​https://share-story.herokuapp.com/api/newPost", posterino, { withCredentials: true }
-    )
-      .then(theChoice => console.log("ITS NEWWWW!", theChoice))
+    this.services.postAnswer(posterino)
+      .then(theChoice => {
+        console.log("ITS NEWWWW!", theChoice)
+        this.setState({ help: undefined, description: "" })
+        document.querySelector(".transitionDiv").style.display = "block"
+        setTimeout(() => {
+          this.props.props.levelizer()
+          this.props.trueizer(18)
+        }, 1000);
+      })
       .catch(err => console.log("You couldn't make a choice!", err))
-    this.setState({ help: undefined, description: "" })
-    document.querySelector(".transitionDiv").style.display = "block"
-    setTimeout(() => {
-      this.props.props.levelizer()
-      this.props.trueizer(18)
-    }, 1000);
+
 
   }
 
