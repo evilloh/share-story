@@ -82,6 +82,68 @@
   text-align: center;
 }
 
+.end8{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  animation: appearIn 2s forwards;
+  color: var(--strong-white)
+
+}
+
+.end9{
+  opacity: 0;
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  font-size: 4rem;
+  animation: appearIn 2s .5s forwards;
+  color: var(--strong-white)
+
+}
+
+.end9 span{
+  font-family: Averia Libre, sans-serif;
+  font-style: italic;
+  font-size: 4rem;
+}
+
+.end9 p{
+  font-family: Roboto, sans-serif;
+  padding-top: 3rem;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.end10{
+  opacity: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: appearIn 2s forwards;
+  color: var(--strong-white)
+}
+
+.end10 h1{
+  font-family: Averia Libre, sans-serif;
+  font-size: 10rem;
+  text-align: center;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+}
+
 .firstWonCont, .secondWonCont{
   width: 100%;
   position: absolute;
@@ -133,4 +195,109 @@
 .next:hover{
   transition: all .05s;
   transform: scale(1.1)
+}
+
+.next:active{
+  transition: all .05s;
+  transform: scale(1)
+}
+
+.stats p{
+  padding-top: 3rem;
+  font-size: 3rem;
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: 300;
+  text-align: left;
+  width: 65%;
+  margin: 0 auto;
+}
+
+.stats{
+  padding-top: 8rem;
+}
+
+#gameOverText{
+  top: 5rem;
+  padding-top: 14rem;
+  padding-bottom: 4rem;
+  font-size: 5rem;
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: 300;
+  text-align: center;
+  width: 85%;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+  border-bottom: 2px solid var(--strong-white)
+}
+
+.finalPep{
+  padding-top: 5rem;
+  margin: 0 auto;
+  width: 80%;
+
+}
+
+#endBtn{
+  font-family: Averia Libre, sans-serif;
+  border-radius: 1rem;
+  background-color: var(--soft-white);
+  color: var(--red);
+  position: absolute;
+  bottom: 10rem;
+  right: 15rem;
+  cursor: pointer;
+  padding: 1rem 4rem;
+}
+
+#endBtn:hover{
+  transition: all .05s;
+  transform: scale(1.1)
+}
+
+#endBtn:active{
+  transition: all .05s;
+  transform: scale(1)
+}
+
+
+.gameDescription{
+  font-family: Roboto, sans-serif;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.gameWon{
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.end11{
+  text-align: center;
+
+}
+
+#gameWonText{
+  text-transform: uppercase;
+  font-family: Roboto, sans-serif;
+  padding-bottom: 7rem;
+}
+
+.statsWon p{
+  padding-top: 3rem;
+  font-size: 3rem;
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: 300;
+  text-align: center;
+  width: 65%;
+  margin: 0 auto;
+}
+
+.statsWon{
+  padding-top: 8rem;
 }

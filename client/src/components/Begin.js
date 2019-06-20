@@ -59,7 +59,7 @@ class Home extends Component {
         15: false,
         16: false,
         17: false,
-        18: false,
+        18: true,
         19: false,
         20: false,
         // 20: this.props.level === 2 ? true : false,
@@ -74,7 +74,7 @@ class Home extends Component {
         29: false,
         30: false,
         31: false,
-        32: true,
+        32: false,
         33: false,
 
       }

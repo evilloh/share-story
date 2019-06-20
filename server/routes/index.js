@@ -27,11 +27,11 @@ router.get('/lastOne', (req, res) => {
       let value = data.forEach((el) => {
         el.help ? trues++ : falses++
       })
-
+      let ratio = trues / (trues + falses)
       // console.log(trues, falses)
       const result = {
-        post: data[data.length - 1],
-        ratio: trues / falses
+        post: data[data.length - 2],
+        ratio: ratio
       }
       console.log("data", data)
       console.log("data.post", data.post)

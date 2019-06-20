@@ -37,6 +37,8 @@ class Choice extends Component {
   }
 
   handleFormSubmit = e => {
+    console.log("diocane ancora di piu")
+
     e.preventDefault()
     let posterino = { help: true, description: this.state.choice.description }
     axios.post("​https://share-story.herokuapp.com/api/newPost", posterino, { withCredentials: true })
@@ -52,6 +54,7 @@ class Choice extends Component {
   }
 
   handleNo = () => {
+    console.log("diocane")
     let posterino = { help: false, description: "" }
     axios.post("​https://share-story.herokuapp.com/api/newPost", posterino, { withCredentials: true }
     )
@@ -96,7 +99,7 @@ class Choice extends Component {
                 <p>The person notices you, looks you in the eyes and asks:</p>
                 <p>Why not?</p>
                 <input className="inputText" type="text" name="description" value={this.state.description} onChange={(e) => this.handleChange(e)} />
-                <input className="sub" type="submit" value="Speak" />
+                <Link onCick={this.handleFormSubmit} id="sub" to="/#exactline2"><input className="sub" type="submit" value="Speak" /></Link>
               </form>
             }
           </div>
