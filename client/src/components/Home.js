@@ -71,7 +71,7 @@ class Home extends Component {
       }
 
       // if (1 > 0) {
-      if (this.props.level > 0) {
+      if (this.props.level >= 0) {
 
         // SECOND SECTION PART
 
@@ -98,8 +98,20 @@ class Home extends Component {
 
       }
 
+      if (this.props.level >= 0) {
+        if (document.querySelector("body").classList.contains("thirdPart")) {
+          if (isInViewport(document.querySelector('.thirdPart'))) {
+            console.log("maodnna cana")
+            document.querySelector(".lastOne").classList.add("appear")
+          } else {
+            document.querySelector(".lastOne").classList.remove("appear")
+          }
+        }
+      }
+
       document.querySelectorAll('.reveal').forEach(elm => {
         if (isInViewport(elm)) {
+
           document.querySelector(".knockIntro").classList.add('knockAppear')
           elm.classList.add('appear')
         } else {
@@ -152,7 +164,7 @@ class Home extends Component {
 
         </section>
 
-        {this.props.level > 0 && <div>
+        {this.props.level >= 0 && <div>
           <section className="secondPart" id="exactline">
             <h2 className="secondPartTitle">It just gives me more reasons to <span>end</span> this insufferable pain.</h2>
           </section>
@@ -173,11 +185,25 @@ class Home extends Component {
         </div>
         }
 
-        {this.props.level > 1 &&
+        {this.props.level >= 0 &&
           <div>
-            <section className="secondPart" id="exactline2">
-              <h2 className="secondPartTitle">PUTTANA LA MADONNA CAGNA SCHIFOSA DIO CANE</h2>
-              <Link to="/begin"> <h4 className="secondKnock"></h4></Link>
+            <section className="thirdPart" id="exactline2">
+              <div className="thirdPartOne">
+                <p className="onePthird">You feel paralysed. You think about how you’re supposed to fill in the society, behave like everyone else.</p>
+                <p className="twoPthird">How you are supposed to follow society’s beauty standard, otherwise you won’t find love. </p>
+                <p className="threePthird">How you need to have a significant other, otherwise you won’t be really happy.</p>
+                <p className="fourPthird">And you really start to believe that, that you can’t be loved as ugly as you are therefore you will never fulfill your happiness. </p>
+                <p className="fivePthird">That the dreams and ambitions you had earlier on have just become that, dreams, compared to the undeniebly worthless lifestyle you’re living now.  </p>
+              </div>
+              <div className="intermediateDiv secondInter">
+              </div>
+              <div className="thirdPartTwo">
+                <div className="lastOne">
+                  <h2> You feel the unstoppable pressure that grows day after day, feasting on your unhappyness and rewarding you with anxiety.</h2>
+                  <Link to="/begin"> <h4 className="secondKnock"></h4></Link>
+                </div>
+              </div>
+
             </section>
           </div>
         }
