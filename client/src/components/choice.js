@@ -55,7 +55,7 @@ class Choice extends Component {
         setTimeout(() => {
           this.props.props.levelizer()
           this.props.trueizer(18)
-          this.setState({ redirect: true })
+          // this.setState({ redirect: true })
         }, 1000);
       })
       .catch(err => console.log("You couldn't make a choice!", err))
@@ -112,7 +112,7 @@ class Choice extends Component {
                 <p>The person notices you, looks you in the eyes and asks:</p>
                 <p>Why not?</p>
                 <input className="inputText" type="text" name="description" value={this.state.description} onChange={(e) => this.handleChange(e)} />
-                <button className="sub" type="submit" value="Speak" />
+                <Link to="/#exact" ><button className="sub" type="submit" value="Speak" /></Link>
               </form>
             }
           </div>
