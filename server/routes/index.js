@@ -7,7 +7,9 @@ const Post = require('../models/post.model')
 
 router.post('/newPost', (req, res) => {
   console.log(req.body)
-  Post.create()
+  const { help, description } = req.body
+
+  Post.create({ help, description })
     .then(data => res.json(data))
     .catch(err => console.log('Error:', err))
 })
