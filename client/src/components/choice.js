@@ -50,13 +50,13 @@ class Choice extends Component {
     this.services.postAnswer(posterino)
       .then(theChoice => {
         console.log(theChoice)
-        this.setState({ help: undefined, description: "" })
-        this.state.transitionDiv.style.display = "block"
-        setTimeout(() => {
-          this.props.props.levelizer()
-          this.props.trueizer(18)
-          // this.setState({ redirect: true })
-        }, 1000);
+        // this.setState({ help: undefined, description: "" })
+        // this.state.transitionDiv.style.display = "block"
+        // setTimeout(() => {
+        this.props.props.levelizer()
+        this.props.trueizer(18)
+        // this.setState({ redirect: true })
+        // }, 1000);
       })
       .catch(err => console.log("You couldn't make a choice!", err))
 
@@ -69,12 +69,12 @@ class Choice extends Component {
     this.services.postAnswer(posterino)
       .then(theChoice => {
         console.log("ITS NEWWWW!", theChoice)
-        this.setState({ help: undefined, description: "" })
-        this.state.transitionDiv.style.display = "block"
-        setTimeout(() => {
-          this.props.props.levelizer()
-          this.props.trueizer(18)
-        }, 1000);
+        // this.setState({ help: undefined, description: "" })
+        // this.state.transitionDiv.style.display = "block"
+        // setTimeout(() => {
+        this.props.props.levelizer()
+        this.props.trueizer(18)
+        // }, 1000);
       })
       .catch(err => console.log("You couldn't make a choice!", err))
 
@@ -105,14 +105,14 @@ class Choice extends Component {
             </div>
             <div className="choices">
               <p className="choice1" onClick={this.typeText}>Say something</p>
-              <Link to="/#exactline2" ><p className="choice2" onClick={this.handleNo}>Stay quiet</p></Link>
+              <p className="choice2" onClick={this.handleNo}>Stay quiet</p>
             </div>
             {this.state.chosen === 1 &&
-              <div>
+              <div className="formerino">
                 <p>The person notices you, looks you in the eyes and asks:</p>
                 <p>Why not?</p>
                 <input className="inputText" type="text" name="description" value={this.state.description} onChange={(e) => this.handleChange(e)} />
-                <Link to="/#exact" ><p onClick={this.handleFormSubmit} className="sub">Speak</p></Link>
+                <h4 onClick={this.handleFormSubmit} className="sub">Speak</h4>
               </div>
             }
           </div>

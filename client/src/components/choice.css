@@ -96,7 +96,7 @@ cite {
   object-fit: cover;
 }
 
-.formContainer form {
+.formerino {
   position: absolute;
   z-index: 20;
   position: absolute;
@@ -110,7 +110,7 @@ cite {
   animation: appearIn 1s 1s forwards;
 }
 
-form p{
+.formerino p{
   font-family: Averia Libre, sans-serif;
   color: var(--strong-white);
   text-align: center;
@@ -119,7 +119,7 @@ form p{
   margin-bottom: 3rem;
 }
 
-form input{
+formerino input{
 margin: 1rem 0;
 }
 
@@ -128,8 +128,8 @@ margin: 1rem 0;
   padding: 0 2rem;
 }
 
-.sub{
-  background-color: none;
+.formerino h4{
+  background-color: var(--soft-white);
   border: none;
   font-size: 4rem;
   font-family: Roboto, sans-serif;
@@ -139,6 +139,7 @@ margin: 1rem 0;
   margin: 1rem auto;
   border-radius: 3px;
   padding: 1rem 0;
+  text-align: center;
 }
 
 .sub:hover{
