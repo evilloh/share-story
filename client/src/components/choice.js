@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './choice.css';
 import axios from 'axios'
 import { HashLink as Link } from 'react-router-hash-link';
+import { Redirect } from 'react-router-dom'
 import PostServices from '../services/postServices'
 
 
@@ -11,6 +12,7 @@ class Choice extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      redirect: false,
       transitionDiv: undefined,
       show: undefined,
       chosen: undefined,
@@ -53,6 +55,7 @@ class Choice extends Component {
         setTimeout(() => {
           this.props.props.levelizer()
           this.props.trueizer(18)
+          this.setState({ redirect: true })
         }, 1000);
       })
       .catch(err => console.log("You couldn't make a choice!", err))
@@ -84,7 +87,7 @@ class Choice extends Component {
   }
 
   render() {
-
+    if (this.state.redirect) return <Redirect to="/"></Redirect>
     return (
       <div className="superContainerChoice">
         <div className="transitionDiv">        </div>
@@ -109,7 +112,7 @@ class Choice extends Component {
                 <p>The person notices you, looks you in the eyes and asks:</p>
                 <p>Why not?</p>
                 <input className="inputText" type="text" name="description" value={this.state.description} onChange={(e) => this.handleChange(e)} />
-                <Link onCick={this.handleFormSubmit} id="sub" to="/#exactline2"><input className="sub" type="submit" value="Speak" /></Link>
+                <button className="sub" type="submit" value="Speak" />
               </form>
             }
           </div>
