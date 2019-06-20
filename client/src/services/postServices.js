@@ -5,8 +5,8 @@ export default class services {
   constructor() {
 
     this.service = axios.create({
-      // baseURL: 'https://share-story.herokuapp.com/api/'
-      baseURL: 'http://localhost:5000/api/'
+      baseURL: 'https://share-story.herokuapp.com/api/'
+      // baseURL: 'http://localhost:5000/api/'
     })
   }
 
