@@ -44,7 +44,7 @@ class Choice extends Component {
   handleFormSubmit = e => {
     console.log("diocane ancora di piu")
 
-    e.preventDefault()
+    // e.preventDefault()
     let posterino = { help: true, description: this.state.choice.description }
 
     this.services.postAnswer(posterino)
@@ -108,12 +108,12 @@ class Choice extends Component {
               <Link to="/#exactline2" ><p className="choice2" onClick={this.handleNo}>Stay quiet</p></Link>
             </div>
             {this.state.chosen === 1 &&
-              <form onSubmit={this.handleFormSubmit}>
+              <div>
                 <p>The person notices you, looks you in the eyes and asks:</p>
                 <p>Why not?</p>
                 <input className="inputText" type="text" name="description" value={this.state.description} onChange={(e) => this.handleChange(e)} />
-                <Link to="/#exact" ><button className="sub" type="submit" value="Speak" /></Link>
-              </form>
+                <Link to="/#exact" ><p onClick={this.handleFormSubmit} className="sub">Speak</p></Link>
+              </div>
             }
           </div>
         }
