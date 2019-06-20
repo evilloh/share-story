@@ -158,7 +158,7 @@ h3{
 }
 
 .knockAppear{
-  animation: appearKnock 1s 4s forwards;
+  animation: appearKnock 1s 2s forwards;
 }
 
 
@@ -246,6 +246,10 @@ h3{
 
 .appear2{
   animation: appearIn 2s forwards;
+}
+
+.appear0{
+  animation: appearIn .01s forwards;
 }
 
 .appear2d2{
@@ -376,7 +380,7 @@ text-transform: uppercase;
   border-bottom: 1px solid white;
   padding-bottom: 1rem;
   display: block;
-  width: 30vw;
+  width: 40vw;
   opacity: 0;
 }
 
@@ -420,6 +424,7 @@ text-transform: uppercase;
   justify-content: center;
   align-content: center;
 
+
 }
 
 .thirdPartOne p{
@@ -447,23 +452,44 @@ text-transform: uppercase;
 
 .onePthird{
   opacity: 0;
-  animation: fadeInRight 1s 1s forwards;
 }
+
+.faderino1{
+  animation: fadeInRight 1s 1s forwards;
+
+}
+
+.faderino2{
+  animation: fadeInLeft 1s 2.5s forwards;
+
+}
+.faderino3{
+  animation: fadeInRight 1s 4s forwards;
+
+}
+.faderino4{
+  animation: fadeInLeft 1s 5.5s forwards;
+
+}
+.faderino5{
+  animation: fadeInRight 1s 7s forwards;
+
+}
+
 .twoPthird{
   opacity: 0;
-  animation: fadeInLeft 1s 2.5s forwards;
 }
 .threePthird{
   opacity: 0;
-  animation: fadeInRight 1s 4s forwards;
+  
 }
 .fourPthird{
   opacity: 0;
-  animation: fadeInLeft 1s 5.5s forwards;
+  
 }
 .fivePthird{
   opacity: 0;
-  animation: fadeInRight 1s 7s forwards;
+  
 }
 
 .lastOne h2{
@@ -482,4 +508,77 @@ text-transform: uppercase;
   width: 100%;
   flex-direction: column;
   justify-content: space-around;
+  opacity: 0;
+  transition: all 1s;
 }
+
+.lastKnock{
+  /* animation: fadeInBottom 1s forwards; */
+  font-size: 5rem;
+  border-bottom: none;
+  color: var(--red);
+  font-size: 7rem;
+  text-align: center;
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-family: Averia Libre, sans-serif;
+  padding-bottom: 1rem;
+  display: block;
+  width: 40vw;
+  /* opacity: 0; */
+
+}
+
+
+.lastKnock:hover{
+  cursor: pointer;
+  transform: scale(1.2) !important;
+}
+
+.lastKnock:active{
+  cursor: pointer;
+  transform: scale(1) !important;
+}
+
+
+#die{
+  text-align: center;
+  
+  animation: heartbeat 1s infinite;
+
+}
+
+#die:hover{
+  color: var(--red)
+
+}
+
+
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( .75 );
+  }
+  20%
+  {
+    transform: scale( 1 );
+  }
+  40%
+  {
+    transform: scale( .75 );
+  }
+  60%
+  {
+    transform: scale( 1 );
+  }
+  70%
+  {
+    transform: scale( .75 );
+  }
+  100%
+  {
+    transform: scale( .75 );
+  }
+}
+

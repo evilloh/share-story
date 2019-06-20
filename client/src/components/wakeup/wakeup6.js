@@ -61,7 +61,7 @@ class WakeUp2 extends Component {
     return (
       <div className="superContainer" >
         <div className="wakeUp"></div>
-        <h1 className="text1WakeUp">It's time to wake up 6666.</h1>
+        <h1 className="text1WakeUp">I don't want to wake up.</h1>
         <div className="wakeDown"></div>
       </div>
     )

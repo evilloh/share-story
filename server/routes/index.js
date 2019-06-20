@@ -34,7 +34,7 @@ router.get('/lastOne', (req, res) => {
       // console.log(trues, falses)
       const result = {
         post: data[data.length - 2],
-        ratio: ratio
+        ratio: Math.floor(ratio)
       }
       console.log("data", data)
       console.log("data.post", data.post)

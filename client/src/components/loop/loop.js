@@ -16,8 +16,13 @@ class Loop extends Component {
   componentDidMount() {
 
     const truizzami = () => {
+      clearInterval(refreshIntervalId)
       console.log(this.props)
+      for (let i = 0; i < 100; i++) {
+        window.clearInterval(i);
+      }
       if (this.props.wakes[28]) {
+
         this.props.trueizer(28)
       } else if (this.props.wakes[29]) {
         this.props.trueizer(29)
@@ -28,9 +33,8 @@ class Loop extends Component {
         for (let i = 0; i < 100; i++) {
           window.clearInterval(i);
         }
-        setInterval(() => {
-          this.props.trueizer(30)
-        }, 200);
+
+        this.props.trueizer(30)
 
       }
 
@@ -206,12 +210,12 @@ class Loop extends Component {
 
 
     var refreshIntervalId = setInterval(() => {
-      document.querySelector("#casita").style.display = "block"
-      document.querySelector("#casita").classList.toggle("glitch")
+      document.querySelector(".casita").style.display = "block"
+      document.querySelector(".casita").classList.toggle("glitch")
       console.log("casa")
       setTimeout(() => {
-        document.querySelector("#casita").style.display = "none"
-        document.querySelector("#casita").classList.toggle("glitch")
+        document.querySelector(".casita").style.display = "none"
+        document.querySelector(".casita").classList.toggle("glitch")
       }, 300);
     }, 3500);
 
@@ -225,7 +229,7 @@ class Loop extends Component {
       <React.Fragment>
         <div className="loopContainer">
           <div className="disturb">
-            <img id="casita" src="img/ilLadro.png" alt="glitch effect"></img>
+            <img className="casita" src="img/ilLadro.png" alt="glitch effect"></img>
           </div>
           <div>
             <canvas ref="canvas" width={this.w} height={this.h} />

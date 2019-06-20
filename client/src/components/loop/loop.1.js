@@ -43,6 +43,7 @@ class Loop1 extends Component {
     let y2 = window.innerHeight / 3
     return (
       <React.Fragment>
+        <div className="casita casooona"></div>
         <div className="transitionDivWhite"></div>
         <div className="disturb">
           <img className="glitchFinal" src="img/ilLadroGL4.png" alt="glitch effect" useMap="#mapperino"></img>

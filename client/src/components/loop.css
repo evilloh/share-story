@@ -31,12 +31,21 @@ figure {
 }
 
 
-#casita {
+.casita {
   z-index: 1;
   position: fixed;
   width: 100vw; 
   height: 100vw;
   display: none;
+}
+
+.casooona{
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
 }
 
 canvas{

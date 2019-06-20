@@ -17,6 +17,7 @@ import WakeUp7 from "./wakeup/wakeup7"
 import WakeUp8 from "./wakeup/wakeup8"
 import Mirror22 from "./mirror/mirror2.2"
 import Choice from "./choice"
+import Casina from "./Casina"
 
 import Door3 from "./door/door3"
 import WakeUp9 from "./wakeup/wakeup9"
@@ -38,9 +39,10 @@ class Home extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      nope: true,
       wakes: {
-        // 0: this.props.level < 1 ? true : false,
-        0: false,
+        0: this.props.level < 1 ? true : false,
+        // 0: false,
         1: false,
         2: false,
         3: false,
@@ -50,8 +52,8 @@ class Home extends Component {
         7: false,
         8: false,
         9: false,
-        10: false,
-        // 10: this.props.level === 1 ? true : false,
+        10: this.props.level === 1 ? true : false,
+        // 10: false,
         11: false,
         12: false,
         13: false,
@@ -59,10 +61,12 @@ class Home extends Component {
         15: false,
         16: false,
         17: false,
-        18: true,
+        18: false,
+        // 18: this.props.level < 1 ? true : false,
         19: false,
-        20: false,
-        // 20: this.props.level === 2 ? true : false,
+        // 19: this.props.level >= 1 ? true : false,
+        // 20: false,
+        20: this.props.level === 2 ? true : false,
         21: false,
         22: false,
         23: false,
@@ -83,6 +87,7 @@ class Home extends Component {
     }
 
     this.trueizer = (level) => {
+      console.log("Soy el truizador")
       let newWakes = { ...this.state.wakes }
       newWakes[level] = false
       newWakes[level + 1] = true
@@ -96,7 +101,7 @@ class Home extends Component {
 
   componentDidMount() {
     window.onscroll = undefined
-
+    this.setState({ level: this.props.level })
     // console.log("here", window.onscroll, this.state.wakes)
   }
 
@@ -104,6 +109,7 @@ class Home extends Component {
 
   render() {
     console.log(this.state)
+    console.log(this.props.level)
     return (
       <React.Fragment>
         {this.state.wakes[0] && <Door1 wakes={this.state.wakes} trueizer={this.trueizer}></Door1>}

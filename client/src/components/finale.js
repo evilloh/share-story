@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './finale.css';
 import axios from 'axios'
+import PostServices from '../services/postServices'
 
 
 class Finale extends Component {
@@ -8,11 +9,14 @@ class Finale extends Component {
 
   constructor(props) {
     super(props)
+
     this.state = {
       help: false,
       description: "",
       ratio: 0,
     }
+    this.services = new PostServices()
+
     this.nextSentence = (n) => {
       if (n === 11) {
         document.querySelector(`.end${n}`).style.display = "none"
@@ -38,13 +42,11 @@ class Finale extends Component {
 
 
   componentDidMount() {
-
-
     document.querySelector(".end6").addEventListener("click", () => {
-      axios.get("https://share-story.herokuapp.com/api/lastOne", { withCredentials: true })
+      this.services.getAnswer()
         .then(theChoice => {
-          console.log("ITS NEWWWW!", theChoice)
-          this.setState({ help: theChoice.data.post.help, description: theChoice.data.post.description, ratio: theChoice.data.ratio })
+          console.log(theChoice)
+          this.setState({ help: theChoice.post.help, description: theChoice.post.description, ratio: theChoice.ratio })
         })
         .catch(err => console.log("You couldn't make a choice!", err))
 
@@ -65,7 +67,7 @@ class Finale extends Component {
           <h2 className="ending end5" onClick={() => this.nextSentence(5)}>You'd feel free.</h2>
           <h2 className="ending end6" onClick={() => this.nextSentence(6)}>Finally.</h2>
           <div className="end7">
-            {this.state.help &&
+            {!this.state.help &&
               <div className="gameOver">
                 <div className="end8">
                   <p id="gameOverText">You didn't find anyone that could say something helpful to you in this unfortunate state of your life.</p>
@@ -109,11 +111,11 @@ class Finale extends Component {
 
               </div>
             }
-            {!this.state.help &&
+            {this.state.help &&
               <div className="gameWon">
                 <div className="end11">
-                  <p id="gameWonText">You hear some voice telling you:</p>
-                  <p className="gameDescription">Dio cane puttana la madona{this.state.description}</p>
+                  <p id="gameWonText">You hear someone's voice telling you:</p>
+                  <p className="gameDescription">{this.state.description}</p>
 
 
                   {this.state.ratio > 0.5 &&

@@ -71,7 +71,7 @@ class Home extends Component {
       }
 
       // if (1 > 0) {
-      if (this.props.level >= 0) {
+      if (this.props.level > 0) {
 
         // SECOND SECTION PART
 
@@ -88,6 +88,7 @@ class Home extends Component {
 
 
           if (isInViewport(document.querySelector('.secondPart2'))) {
+
             document.querySelector(".secondPart2").classList.add("activeSecond")
             showTextsSecond()
           } else {
@@ -97,16 +98,35 @@ class Home extends Component {
         }
 
       }
+      /////// THIRD PART ///////
 
-      if (this.props.level >= 0) {
-        if (document.querySelector("body").classList.contains("thirdPart")) {
-          if (isInViewport(document.querySelector('.thirdPart'))) {
-            console.log("maodnna cana")
-            document.querySelector(".lastOne").classList.add("appear")
-          } else {
-            document.querySelector(".lastOne").classList.remove("appear")
-          }
+      if (this.props.level > 1) {
+        if (isInViewport(document.querySelector('.thirdPartTwo'))) {
+          document.querySelector(".lastOne").classList.add("appear3d1")
+          document.querySelector(".lastKnock").classList.add("appear4")
+        } else {
+          document.querySelector(".lastOne").classList.remove("appear3d1")
+          document.querySelector(".lastKnock").classList.remove("appear4")
         }
+      }
+
+      if (this.props.level > 1) {
+        if (isInViewport(document.querySelector('.thirdPart'))) {
+
+          document.querySelector(".onePthird").classList.add("faderino1")
+          document.querySelector(".twoPthird").classList.add("faderino2")
+          document.querySelector(".threePthird").classList.add("faderino3")
+          document.querySelector(".fourPthird").classList.add("faderino4")
+          document.querySelector(".fivePthird").classList.add("faderino5")
+        } else {
+
+          document.querySelector(".onePthird").classList.remove("faderino1")
+          document.querySelector(".twoPthird").classList.remove("faderino2")
+          document.querySelector(".threePthird").classList.remove("faderino3")
+          document.querySelector(".fourPthird").classList.remove("faderino4")
+          document.querySelector(".fivePthird").classList.remove("faderino5")
+        }
+
       }
 
       document.querySelectorAll('.reveal').forEach(elm => {
@@ -141,9 +161,14 @@ class Home extends Component {
       <React.Fragment>
         <header id="hero" className="headerContainer">
           <div className="titleContainer hero-inertia">
-            <h1>Welcome</h1>
+            {this.props.level > 1 ?
+              <Link smooth to="/#exactline2"><h1 id="die">LET'S FINISH THIS, SHALL WE?</h1></Link>
+              : <h1>Share</h1>
+            }
+
           </div>
-          <Link smooth to="/#exactline"><h3 className="h3-inertia">Let's begin a journey.</h3></Link>
+
+          {this.props.level > 1 ? <h3 className="h3-inertia">You know you want it.</h3> : <h3 className="h3-inertia">Let me tell you a story.</h3>}
         </header>
         <div className="intermediateDiv">
         </div>
@@ -164,28 +189,30 @@ class Home extends Component {
 
         </section>
 
-        {this.props.level >= 0 && <div>
-          <section className="secondPart" id="exactline">
-            <h2 className="secondPartTitle">It just gives me more reasons to <span>end</span> this insufferable pain.</h2>
-          </section>
-          <section className="secondPart2">
-            <h4 className="firstSent">What's the purpose</h4>
-            <h4 className="secondSent">I just want it to stop</h4>
-            <h4 className="thirdSent">I'm tired</h4>
-            <h4 className="fourthSent">Why all this pressure</h4>
-            <h4 className="fifthSent">I can't stand the pressure</h4>
-            <h4 className="sixthSent">Disappear</h4>
-            <h4 className="seventhSent">Stop it</h4>
-            <h4 className="eighthSent">Numb</h4>
-          </section>
-          <section className="secondPart3">
-            <p className="secondP reveal2">You feel the unstoppable pressure that grows day after day, feasting on your unhappyness and rewarding you with anxiety.</p>
-            <Link to="/begin"> <h4 className="secondKnock"> </h4></Link>
-          </section>
-        </div>
+        {
+          this.props.level > 0 && <div>
+            <section className="secondPart" id="exactline">
+              <h2 className="secondPartTitle">It just gives me more reasons to <span>end</span> this insufferable pain.</h2>
+            </section>
+            <section className="secondPart2">
+              <h4 className="firstSent">What's the purpose</h4>
+              <h4 className="secondSent">I just want it to stop</h4>
+              <h4 className="thirdSent">I'm tired</h4>
+              <h4 className="fourthSent">Why all this pressure</h4>
+              <h4 className="fifthSent">I can't stand the pressure</h4>
+              <h4 className="sixthSent">Disappear</h4>
+              <h4 className="seventhSent">Stop it</h4>
+              <h4 className="eighthSent">Numb</h4>
+            </section>
+            <section className="secondPart3">
+              <p className="secondP reveal2">You feel the unstoppable pressure that grows day after day, feasting on your unhappyness and rewarding you with anxiety.</p>
+              <Link to="/begin"> <h4 className="secondKnock"> </h4></Link>
+            </section>
+          </div>
         }
 
-        {this.props.level >= 0 &&
+        {
+          this.props.level > 1 &&
           <div>
             <section className="thirdPart" id="exactline2">
               <div className="thirdPartOne">
@@ -193,14 +220,14 @@ class Home extends Component {
                 <p className="twoPthird">How you are supposed to follow society’s beauty standard, otherwise you won’t find love. </p>
                 <p className="threePthird">How you need to have a significant other, otherwise you won’t be really happy.</p>
                 <p className="fourPthird">And you really start to believe that, that you can’t be loved as ugly as you are therefore you will never fulfill your happiness. </p>
-                <p className="fivePthird">That the dreams and ambitions you had earlier on have just become that, dreams, compared to the undeniebly worthless lifestyle you’re living now.  </p>
+                <p className="fivePthird">That the dreams and ambitions you had earlier on have just become that, dreams, compared to the undeniably worthless lifestyle you’re living now.  </p>
               </div>
               <div className="intermediateDiv secondInter">
               </div>
               <div className="thirdPartTwo">
                 <div className="lastOne">
-                  <h2> You feel the unstoppable pressure that grows day after day, feasting on your unhappyness and rewarding you with anxiety.</h2>
-                  <Link to="/begin"> <h4 className="secondKnock"></h4></Link>
+                  <h2> You feel the unstoppable pressure that grows day after day, feasting on your unhappiness and rewarding you with anxiety.</h2>
+                  <Link to="/begin"> <h4 className="lastKnock">KNOCK KNOCK</h4></Link>
                 </div>
               </div>
 
@@ -209,7 +236,7 @@ class Home extends Component {
         }
 
 
-      </React.Fragment>
+      </React.Fragment >
     )
   }
 

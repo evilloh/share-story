@@ -50,11 +50,14 @@ class Choice extends Component {
     this.services.postAnswer(posterino)
       .then(theChoice => {
         console.log(theChoice)
+        this.props.props.levelizer()
+        this.setState({ redirect: true })
+
         // this.setState({ help: undefined, description: "" })
         // this.state.transitionDiv.style.display = "block"
         // setTimeout(() => {
-        this.props.props.levelizer()
-        this.props.trueizer(18)
+        // this.props.props.levelizer()
+        // this.props.trueizer(18)
         // this.setState({ redirect: true })
         // }, 1000);
       })
@@ -66,23 +69,18 @@ class Choice extends Component {
   handleNo = () => {
     console.log("diocane")
     let posterino = { help: false, description: "" }
+
     this.services.postAnswer(posterino)
       .then(theChoice => {
-        console.log("ITS NEWWWW!", theChoice)
-        // this.setState({ help: undefined, description: "" })
-        // this.state.transitionDiv.style.display = "block"
-        // setTimeout(() => {
+        this.setState({ help: undefined, description: "" })
         this.props.props.levelizer()
-        this.props.trueizer(18)
-        // }, 1000);
+        this.setState({ redirect: true })
       })
       .catch(err => console.log("You couldn't make a choice!", err))
-
-
   }
 
   componentDidMount() {
-    console.log(this.props)
+    console.log("props from choices on didmount", this.props)
     this.setState({ transitionDiv: document.querySelector(".transitionDiv") })
   }
 

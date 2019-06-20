@@ -146,6 +146,7 @@ margin: 1rem 0;
   transition: all .1s;
   font-size: 4.4rem;
   padding: 0.8rem 0 ;
+  cursor: pointer;
 }
 
 .sub:active{

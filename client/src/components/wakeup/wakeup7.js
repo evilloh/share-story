@@ -60,7 +60,7 @@ class WakeUp3 extends Component {
     return (
       <div className="superContainer" >
         <div className="wakeUp"></div>
-        <h1 className="text1WakeUp">..dafsd 777.</h1>
+        <h1 className="text1WakeUp">I'll get fired if I don't hurry.</h1>
         <div className="wakeDown"></div>
       </div>
     )
