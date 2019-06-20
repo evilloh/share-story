@@ -11,6 +11,7 @@ class Choice extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      transitionDiv: undefined,
       show: undefined,
       chosen: undefined,
       choice: {
@@ -48,7 +49,7 @@ class Choice extends Component {
       .then(theChoice => {
         console.log(theChoice)
         this.setState({ help: undefined, description: "" })
-        document.querySelector(".transitionDiv").style.display = "block"
+        this.state.transitionDiv.style.display = "block"
         setTimeout(() => {
           this.props.props.levelizer()
           this.props.trueizer(18)
@@ -66,7 +67,7 @@ class Choice extends Component {
       .then(theChoice => {
         console.log("ITS NEWWWW!", theChoice)
         this.setState({ help: undefined, description: "" })
-        document.querySelector(".transitionDiv").style.display = "block"
+        this.state.transitionDiv.style.display = "block"
         setTimeout(() => {
           this.props.props.levelizer()
           this.props.trueizer(18)
@@ -79,6 +80,7 @@ class Choice extends Component {
 
   componentDidMount() {
     console.log(this.props)
+    this.setState({ transitionDiv: document.querySelector(".transitionDiv") })
   }
 
   render() {
