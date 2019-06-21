@@ -162,9 +162,29 @@ class Loop extends Component {
           scrollFrame++
         }
       }
+
       if (scrollerino >= 0) {
         scrollerino = 0
       }
+      if (scrollerino * -1 > canvas.width * 3.6) {
+        document.querySelector(".firstdayfour").classList.add("firstAppear")
+      }
+      if (scrollerino * -1 > canvas.width * 1.5) {
+        document.querySelector(".firstdaythird").classList.add("firstAppear")
+      }
+
+      if (scrollerino * -1 > canvas.width * 0.25) {
+        document.querySelector(".firstdayfirst").classList.add("firstAppear")
+      }
+      if (scrollerino * -1 > canvas.width * 0.75) {
+        document.querySelector(".firstdaysec").classList.add("firstAppear")
+      }
+
+      if (scrollerino * -1 > canvas.width * 2) {
+        document.querySelector(".mobileContainer").classList.add("animatedMobile")
+        setTimeout(changePhone, 5500);
+      }
+
       if (scrollerino * -1 > canvas.width * 2) {
         document.querySelector(".mobileContainer").classList.add("animatedMobile")
         setTimeout(changePhone, 5500);
@@ -213,7 +233,10 @@ class Loop extends Component {
 
     return (
       <div>
-
+        <p className="firstdayfirst">What a nice day, what a nice life!</p>
+        <p className="firstdaysec">Maybe not a nice life for everyone...</p>
+        <p className="firstdaythird">Let me distract myself a little...</p>
+        <p className="firstdayfour">Maybe not a nice life at all</p>
         <div className="endFirstDayBG">
           <div className="endFirstDayContainer">
             {this.state.span >= 0 && <h4>

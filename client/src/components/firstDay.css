@@ -135,3 +135,64 @@ POSIZIONE FINALE
 .endFirstDayContainer span:hover{
   cursor: pointer;
 }
+
+.firstdayfirst {
+  position: absolute;
+  color: var(--light-dark);
+  font-family: Roboto, sans-serif;
+  font-size: 4rem;
+  font-weight: 500;
+  top: 7rem;
+  left: 20rem;
+  opacity: 0;
+  
+}
+
+.firstdaysec {
+  position: absolute;
+  color: var(--light-dark);
+  font-family: Roboto, sans-serif;
+  font-size: 4rem;
+  font-weight: 500;
+  top: 7rem;
+  right: 20rem;
+  opacity: 0;
+  
+}
+
+.firstdaythird {
+  position: absolute;
+  color: var(--light-dark);
+  font-family: Roboto, sans-serif;
+  font-size: 4rem;
+  font-weight: 500;
+  top: 7rem;
+  left: 10rem;
+  opacity: 0;
+  
+}
+.firstdayfour {
+  position: absolute;
+  color: var(--red);
+  font-family: Roboto, sans-serif;
+  font-size: 4rem;
+  font-weight: 500;
+  top: 7rem;
+  left: 10rem;
+  opacity: 0;
+  
+}
+
+.firstAppear{
+  animation: firstdayappear 5s;
+}
+
+@keyframes firstdayappear{
+  0%{ opacity: 0;
+  transform: translateY(0)
+}
+  35%{ opacity: 100}
+  75%{ opacity: 100}
+  100%{ opacity: 0;
+  transform: translateY(25rem)}
+}
