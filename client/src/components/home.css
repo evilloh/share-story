@@ -15,6 +15,62 @@ a{
   text-decoration: none;
 }
 
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: var(--soft-white);
+  margin: auto;
+  padding: 4rem;
+  border: 1px solid #888;
+  width: 80%;
+  color: var(--black)
+
+}
+
+.modal-content p{
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  font-size: 3rem;
+  padding: 2rem;
+  line-height: 1.2;
+}
+
+.modal-content span{
+  font-weight: 500;
+  font-size: 4rem;
+}
+
+/* The Close Button */
+.closeM {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closeM:hover,
+.closeM:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
 .titleContainer h1{
   font-family: Averia Libre, sans-serif;
   font-size: 12rem;
@@ -99,7 +155,7 @@ h3{
 
 .sectionContainer{
   width: 100vw;
-  height: 120vh;
+  height: 121vh;
   margin-top: -10rem;
   padding-top: 20rem;
   display: flex;
@@ -139,17 +195,37 @@ h3{
   margin-top: -20rem;
 }
 
+.knockHomeCont{
+  display: flex;
+  justify-content: flex-end;
+}
+
 .knockIntro {
   width: 85%;
   text-align: right;
-  bottom: 30px;
   right: 150px;
   font-family: Averia Libre, sans-serif;
   text-transform: uppercase;  
   font-size: 5rem;
   margin: 5rem;
   opacity: 0;
-  
+}
+
+.inticon {
+  width: 40px;
+  height: 40px;
+  text-align: right;
+  right: 150px;
+  font-family: Averia Libre, sans-serif;
+  text-transform: uppercase;  
+  font-size: 5rem;
+  margin: 5rem;
+  align-self: center;
+}
+
+.inticon:hover{
+  cursor: pointer;
+  transform: scale(1.1)
 }
 
 .knockIntro:hover {
@@ -314,6 +390,7 @@ h3{
   font-family: Averia Libre, sans-serif;
   font-size: 8rem;
   opacity: 0;
+  text-align: center;
 }
 .fifthSent{
   color: var(--soft-white);

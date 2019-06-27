@@ -127,7 +127,7 @@ class Loop extends Component {
         truizzami()
 
       } else {
-        if (delta) zoom(delta);
+        if (delta) zoom(delta *-1);
 
       }
 

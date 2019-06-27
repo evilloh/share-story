@@ -23,11 +23,40 @@ class Home extends Component {
 
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      modal: true,
+    }
 
   }
 
   componentDidMount() {
+    // MODAL STUFF //
+    // Get the modal
+    const modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    const btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    const span = document.getElementsByClassName("closeM")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function () {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    // END MODAL STUFF
     const showTextsSecond = () => {
       document.querySelector('.firstSent').classList.add("appear4")
       document.querySelector('.secondSent').classList.add("appear3d1")
@@ -159,6 +188,17 @@ class Home extends Component {
 
     return (
       <React.Fragment>
+        {this.state.modal && <div id="myModal" className="modal">
+          <div className="modal-content">
+            <span className="closeM">&times;</span>
+            <p>This story will unroll through the website with the use of the scroll up/down of your mouse and some clicks.
+            </p><p>
+              To give the best immersive experience to the user there aren't any icons that tell you when to click or scroll, so
+            you might feel a little lost sometimes but don't worry, that's part of the experience. </p>
+            <p>Just remember if you don't know what to do
+            try to <span>scroll!</span> </p>
+          </div>
+        </div>}
         <header id="hero" className="headerContainer">
           <div className="titleContainer hero-inertia">
             {this.props.level > 1 ?
@@ -184,8 +224,11 @@ class Home extends Component {
               <p> To me it feels like if a monster called depression is waiting outside the door of my house, knocking every once in a while, asking to come in. </p>
             </div>
           </div>
+          <div className="knockHomeCont">
+            <Link to="/begin" props={this.props}> <h4 className="knockIntro">Knock Knock</h4></Link>
+            <img src="/img/inticon.png" alt="? icon" className="inticon" id="myBtn"></img>
+          </div>
 
-          <Link to="/begin" props={this.props}> <h4 className="knockIntro">Knock Knock</h4></Link>
 
         </section>
 
