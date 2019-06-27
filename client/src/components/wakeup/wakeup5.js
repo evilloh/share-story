@@ -62,7 +62,7 @@ class WakeUp1 extends Component {
 
   render() {
     return (
-      <div className="superContainer" >
+      <div className="superContainer1" >
         <div className="wakeUp"></div>
         <h1 className="text1WakeUp">I can't wake up.</h1>
         <div className="wakeDown"></div>

@@ -103,7 +103,7 @@
   position: relative;
   font-size: 4rem;
   animation: appearIn 2s .5s forwards;
-  color: var(--strong-white)
+  color: var(--strong-white);
 
 }
 
@@ -185,11 +185,16 @@
   border-radius: 1rem;
   background-color: var(--soft-white);
   color: var(--strong-dark);
-  position: absolute;
+  /* position: absolute; */
+  align-self: flex-end;
   bottom: 4rem;
   right: 15rem;
   cursor: pointer;
   padding: 1rem 4rem;
+  margin-right: 10rem;
+  margin-top: 10rem;
+  text-align: center;
+  width: 19rem;
 }
 
 .next:hover{
@@ -208,7 +213,7 @@
   font-family: Roboto;
   font-style: italic;
   font-weight: 300;
-  text-align: left;
+  text-align: center;
   width: 65%;
   margin: 0 auto;
 }
@@ -236,19 +241,27 @@
   padding-top: 5rem;
   margin: 0 auto;
   width: 80%;
+  height: 90%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+
 
 }
+
 
 #endBtn{
   font-family: Averia Libre, sans-serif;
   border-radius: 1rem;
   background-color: var(--soft-white);
   color: var(--red);
-  position: absolute;
-  bottom: 10rem;
-  right: 15rem;
+  /* position: absolute; */
+  /* bottom: 10rem;
+  right: 15rem; */
+  align-self: flex-end;
   cursor: pointer;
   padding: 1rem 4rem;
+  /* margin: 10rem 0 0 0; */
 }
 
 #endBtn:hover{
@@ -278,6 +291,9 @@
 }
 .end11{
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
 }
 

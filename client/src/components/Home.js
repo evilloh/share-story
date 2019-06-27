@@ -198,7 +198,7 @@ class Home extends Component {
               <h4 className="firstSent">What's the purpose</h4>
               <h4 className="secondSent">I just want it to stop</h4>
               <h4 className="thirdSent">I'm tired</h4>
-              <h4 className="fourthSent">Why all this pressure</h4>
+              <h4 className="fourthSent">No one cares. They’re just pretending</h4>
               <h4 className="fifthSent">I can't stand the pressure</h4>
               <h4 className="sixthSent">Disappear</h4>
               <h4 className="seventhSent">Stop it</h4>
@@ -226,7 +226,7 @@ class Home extends Component {
               </div>
               <div className="thirdPartTwo">
                 <div className="lastOne">
-                  <h2> You feel the unstoppable pressure that grows day after day, feasting on your unhappiness and rewarding you with anxiety.</h2>
+                  <h2> Monsters don’t sleep under your bed, they scream inside of your head.  </h2>
                   <Link to="/begin"> <h4 className="lastKnock">KNOCK KNOCK</h4></Link>
                 </div>
               </div>

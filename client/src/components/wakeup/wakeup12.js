@@ -62,7 +62,7 @@ class WakeUp4 extends Component {
     // I have to put a timeout because it doesn't wait for the shit to render before doing it. I WANT A PROMISE!!
 
     return (
-      <div className="superContainer" >
+      <div className="superContainer2" >
         <div className="wakeUp"></div>
         <h1 className="text1WakeUp">I don't even recognise myself at the mirror anymore.</h1>
         <div className="wakeDown"></div>

@@ -146,8 +146,8 @@ class Finale extends Component {
                     <p>How common and how <span>human</span> it is.</p>
                     <p>If this is your case, you are not broken, you are not useless and most importantly you are not alone.</p>
 
+                    <p id="endBtn" onClick={() => this.nextSentence(9)} >End</p>
                   </div>
-                  <p id="endBtn" onClick={() => this.nextSentence(9)} >End</p>
 
                 </div>
 

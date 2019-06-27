@@ -16,6 +16,8 @@ class Loop1 extends Component {
   componentDidMount() {
     document.querySelector("#areaClick").onclick = (e) => {
       e.preventDefault()
+      var audio = new Audio('/sounds/doorOpen.mp3');
+      audio.play();
       document.querySelector(".transitionDivWhite").style.display = "block"
       setTimeout(() => {
         this.props.trueizer(31)

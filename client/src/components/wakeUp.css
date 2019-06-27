@@ -26,14 +26,23 @@
 }
 
 .superContainer{
-  height: 4000px;
+  height: 2500px;
   background-color: rgb(216, 216, 216);
 }
 
-/* ::-webkit-scrollbar {
+.superContainer1{
+  height: 4000px;
+  background-color: rgb(216, 216, 216);
+}
+.superContainer2{
+  height: 5800px;
+  background-color: rgb(216, 216, 216);
+}
+
+::-webkit-scrollbar {
     width: 0px;
     background: transparent;
-} */
+}
 
 .text1WakeUp{
   text-align: center;
@@ -77,12 +86,23 @@
 }
 .doorContainer3{
   height: 100vh;
+  width: 100vw;
   overflow: hidden;
-  background-image:  url("/img/door3.jpg");
+  background-image:  url("/img/door30.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center; 
+  background-size: cover;
+  animation: glitchDoor .2s infinite;
+
 }
+
+@keyframes glitchDoor{
+	0% {content:url("/img/door30.jpg")}
+	20% {content:url("/img/door31.jpg")}
+	100% {content:url("/img/door30.jpg")}
+}
+
 
 .blackDiv, .blackDiv1{
   width: 100vw;

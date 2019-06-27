@@ -116,10 +116,10 @@ class Loop extends Component {
     let casa = 0
     var handleScroll = function (evt) {
       var delta = evt.wheelDelta ? evt.wheelDelta / 440 : evt.detail ? -evt.detail : 0;
-      casa += delta
-      if (casa > 25) {
+      casa += (delta < 0) ? delta * -1 : delta;
+      console.log("Casa", casa)
+      if (casa > 30) {
         if (delta) zoom(delta);
-        // console.log("Casa", casa)
         for (let i = 0; i < 100; i++) {
           window.clearInterval(i);
         }
