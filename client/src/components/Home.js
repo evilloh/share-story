@@ -226,7 +226,7 @@ class Home extends Component {
               </div>
               <div className="thirdPartTwo">
                 <div className="lastOne">
-                  <h2> Monsters don’t sleep under your bed, they scream inside of your head.  </h2>
+                  <h2> "Depression isn’t always at 3am. Sometimes it happens at 3pm, while you’re with friends and you’re halfway through a laugh"  </h2>
                   <Link to="/begin"> <h4 className="lastKnock">KNOCK KNOCK</h4></Link>
                 </div>
               </div>
