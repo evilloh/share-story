@@ -64,7 +64,7 @@ class WakeUp1 extends Component {
     return (
       <div className="superContainer2" >
         <div className="wakeUp"></div>
-        <h1 className="text1WakeUp">I feel like drowing but I can see everyone else around me breathing.</h1>
+        <h1 className="text1WakeUp">I used to be happy</h1>
         <div className="wakeDown"></div>
       </div>
     )

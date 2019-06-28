@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './finale.css';
+import './finaletotal.css';
 import axios from 'axios'
 import PostServices from '../services/postServices'
 
